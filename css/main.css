@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: white;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-image: url("../img/main-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=main.css.map */
