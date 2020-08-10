@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herbaciarnia</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
-        integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e442fdfd4a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -14,7 +15,7 @@
     <div class="wrapper">
         <header>
             <div class="logo">
-                LOGO
+                <i class="fas fa-mug-hot"></i> Teh mimpi
             </div>
             <nav class="menu">
                 <ul class="menu__list">
@@ -26,13 +27,13 @@
                     </li>
                     <li class="menu__item">
                         <div class=" menu__searchBox">
-                            <input class="menu__input" type="text" placeholder="wyszukaj...">
-                            <button class="menu__searchBtn"></button>
+                            <input class="menu__input menu__input--hidden" type="text" placeholder="wyszukaj...">
+                            <button class="menu__searchBtn"><i class="menu__link fas fa-search"></i></button>
                         </div>
                     </li>
                     <li class="menu__item">
-                        <button class="menu__basketBtn">
-                            <i class="fas fa-shopping-basket"></i>
+                        <button class="menu__link menu__basketBtn">
+                            <i class="menu__link fas fa-shopping-basket"></i>
                             Koszyk
                         </button>
                     </li>
@@ -260,16 +261,24 @@
 
         </div>
         <div class="about">
-            <h2 class="title">Kim jesteśmy?</h2>
-            <p>Jesteśmy firmą, która od ponad 25 lat zajmuje się sprzedażą najwyższej klasy herbat. Dbamy o to, aby
-                nasze produkty pochodziły jedynie ze sprawdzonych, ekologicznych upraw, a przy ich zbiorze stosowano
-                zasady, które odpowiadają najwyższym standardom oraz tradycji, ale... jesteśmy przede wszystkim ludźmi.
-                Ludźmi z pasją do picia herbaty. Nie tylko dostarczamy herbate do waszych domów, ale dbamy o cały proces
-                jaki musi przebyć - od plantacji, aż po progi waszych drzwi. I robimy to z miłością.</p>
-            <h2 class="title">Dlaczego warto pić herbatę?</h2>
-            <p>Dla przyjemności, zdrowia, energii, spokoju, harmonii, towarzystwa, z ciekawości… w końcu świat oferuje
-                tyle rodzajów herbat, że dla każdego znajdzie się odpowiedni powód i smak. Dlatego też nasza oferta jest
-                stale powiększana, aby zaspokoić pragnienie każdego, nawet największego konesera herbat!</p>
+            <section class="about__company">
+                <h2 class="title">Kim jesteśmy?</h2>
+                <p>Jesteśmy firmą, która od ponad 25 lat zajmuje się sprzedażą najwyższej klasy herbat. Dbamy o to, aby
+                    nasze produkty pochodziły jedynie ze sprawdzonych, ekologicznych upraw, a przy ich zbiorze stosowano
+                    zasady, które odpowiadają najwyższym standardom oraz tradycji, ale... jesteśmy przede wszystkim
+                    ludźmi.
+                    Ludźmi z pasją do picia herbaty. Nie tylko dostarczamy herbate do waszych domów, ale dbamy o cały
+                    proces
+                    jaki musi przebyć - od plantacji, aż po progi waszych drzwi. I robimy to z miłością.</p>
+            </section>
+            <section class="about__tea">
+                <h2 class="title">Dlaczego warto pić herbatę?</h2>
+                <p>Dla przyjemności, zdrowia, energii, spokoju, harmonii, towarzystwa, z ciekawości… w końcu świat
+                    oferuje
+                    tyle rodzajów herbat, że dla każdego znajdzie się odpowiedni powód i smak. Dlatego też nasza oferta
+                    jest
+                    stale powiększana, aby zaspokoić pragnienie każdego, nawet największego konesera herbat!</p>
+            </section>
         </div>
         <footer class="footer">&copy;2020 Natalia Dziedzic</footer>
     </div>

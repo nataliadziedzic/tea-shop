@@ -6,6 +6,8 @@
   color: white;
   text-decoration: none;
   list-style: none;
+  outline: none;
+  font-family: 'Ubuntu Condensed', sans-serif;
 }
 
 body {
@@ -16,8 +18,143 @@ body {
   background-size: cover;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
+header {
+  background-image: url("../img/navigation.jpg");
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .wrapper {
   width: 80%;
   margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.logo {
+  height: 6vh;
+  line-height: 6vh;
+  margin-top: 5px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  .logo {
+    font-size: 33px;
+  }
+}
+
+@media (min-width: 1024px), (orientation: landscape) {
+  .logo {
+    height: 10vh;
+    line-height: 10vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    font-size: 40px;
+  }
+}
+
+.menu {
+  height: 6vh;
+  line-height: 6vh;
+}
+
+@media (min-width: 1024px), (orientation: landscape) {
+  .menu {
+    height: 10vh;
+    line-height: 10vh;
+  }
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.menu__link {
+  font-size: 15px;
+  text-shadow: 1px 1px black;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+@media (min-width: 720px) {
+  .menu__link {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu__link {
+    font-size: 22px;
+  }
+}
+
+.menu__link:hover, .menu__link--active {
+  color: goldenrod;
+}
+
+.menu__input {
+  margin: 0 10px 0 0;
+  padding: 5px 10px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: rgba(66, 58, 49, 0.88);
+  color: goldenrod;
+  font-size: 15px;
+  text-align: center;
+}
+
+@media (max-width: 719px) {
+  .menu__input {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu__input {
+    width: 220px;
+    padding: 8px 10px;
+  }
+}
+
+.menu__input::-webkit-input-placeholder {
+  color: #d3d0d0;
+}
+
+.menu__input:-ms-input-placeholder {
+  color: #d3d0d0;
+}
+
+.menu__input::-ms-input-placeholder {
+  color: #d3d0d0;
+}
+
+.menu__input::placeholder {
+  color: #d3d0d0;
 }
 /*# sourceMappingURL=main.css.map */

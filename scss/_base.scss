@@ -5,6 +5,8 @@
     color: white;
     text-decoration: none;
     list-style: none;
+    outline: none;
+    font-family: 'Ubuntu Condensed', sans-serif;
 }
  body {
     background-image: url("../img/main-background.jpg");
@@ -13,8 +15,23 @@
     background-position: center;
     background-size: cover;
   }
+  button{
+    background-color: transparent;
+    border: none;
+}
+  header{
+    background-image: url("../img/navigation.jpg");
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
  .wrapper{
    width: 80%;
    margin: 0 auto;
  }
 
+.title{
+  text-align: center;
+}
