@@ -1,0 +1,102 @@
+.productsBoxGrid{
+    margin-top: 12vh;
+    padding: 20px;
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.603);
+    @media (orientation: landscape), (min-width: 1024px){
+        margin-top: 20vh;
+        padding-top: 120px;
+    } 
+    @media (min-width: 1024px){
+        grid-template-columns: repeat(4,minmax(150px, 250px));
+    }
+    &__title{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        letter-spacing: 1px;
+        background: radial-gradient(100% 50%, rgb(66, 62, 62), rgba(0, 0, 0, 0.603));
+        line-height: 250%;
+    }
+}
+    
+    .item{
+        height: 320px;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        @media (min-width: 720px){
+        height: 350px;
+        }
+    &__img{
+        flex-shrink: 0;
+        width: 115px;
+        height: 115px;
+        margin-bottom: 5px;
+
+        @media (min-width: 720px){
+        width: 155px;
+        height: 155px;
+        }
+    }
+    &__name{
+        font-size: 18px;
+        @media (orientation: landscape), (min-width: 720px){
+            font-size: 22px;
+        }
+
+    }
+    &__description{
+        font-size: 12px;
+        overflow: auto;
+        margin: 10px;
+        min-height: 50px;
+        @media (orientation: landscape), (min-width: 720px){
+            font-size: 15px;
+        }
+
+    }
+    &__moreDescription{
+        display:none;
+    }
+    &__moreDescription--show{
+        display: inline-block;
+    }
+    &__readMore{
+        &:hover{
+            color: rgb(218, 165, 32);
+        }
+    }
+    &__buy{
+        padding: 2px;
+        margin: 5px;
+        font-size: 16px;
+        letter-spacing: 1px;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgb(218, 165, 32);
+        color: rgb(0, 0, 0);
+        width: 115px;
+        transition: .3s;
+        @media (min-width: 720px){
+            width: 155px;
+            padding: 5px;
+            }
+        &:hover{
+            color: rgb(218, 165, 32);
+            background-color: rgb(0, 0, 0);
+            border: 1px solid rgb(255, 255, 255);
+            @media (min-width: 720px){
+                width: 165px;
+                padding: 7px;
+                }
+
+        }
+    }
+}
