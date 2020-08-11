@@ -17,6 +17,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  position: relative;
 }
 
 button {
@@ -35,14 +36,8 @@ header {
   width: 100%;
 }
 
-.wrapper {
-  width: 80%;
-  margin: 0 auto;
-  position: relative;
-}
-
 .title {
-  margin: 20px 0;
+  margin-bottom: 10px;
   font-family: 'Lato', sans-serif;
   font-size: 25px;
 }
@@ -51,6 +46,11 @@ header {
   .title {
     font-size: 35px;
   }
+}
+
+.backgroundWrapper {
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(40%, rgba(0, 0, 0, 0.603)), color-stop(rgba(139, 107, 26, 0.863)), to(black));
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.603) 40%, rgba(139, 107, 26, 0.863), black);
 }
 
 .logo {
@@ -311,6 +311,49 @@ header {
   .item__buy:hover {
     width: 165px;
     padding: 7px;
+  }
+}
+
+.about__text {
+  font-family: 'Lato', serif;
+  padding: 10px 30px 20px;
+  text-shadow: 1px 1px black;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@media (min-width: 720px) {
+  .about__text {
+    padding: 10px 105px 40px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+  .about__text {
+    padding: 20px 155px 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about__text {
+    padding: 50px 260px;
+    font-size: 22px;
+  }
+}
+
+.footer {
+  height: 4vh;
+  line-height: 4vh;
+  background-color: rgba(0, 0, 0, 0.541);
+  font-size: 10px;
+}
+
+@media (min-width: 1024px), (orientation: landscape) {
+  .footer {
+    height: 5vh;
+    line-height: 5vh;
+    font-size: 12px;
   }
 }
 /*# sourceMappingURL=main.css.map */
