@@ -32,8 +32,8 @@
                     </div>
                 </li>
                 <li class="menu__item">
-                    <button class="menu__link menu__basketBtn">
-                        <i class="menu__link fas fa-shopping-basket"></i>
+                    <button class="menu__link menu__cartBtn">
+                        <span class="menu__cartValue">0</span><i class="menu__link fas fa-shopping-basket"></i>
                         Koszyk
                     </button>
                 </li>
@@ -284,6 +284,10 @@
         </div>
 
     </div>
+    <div class="shoppingCart">
+        <button class="shoppingCart__exit"><i class="fas fa-times"></i></button>
+        <p class="shoppingCart__total">Suma:<span class="shoppingCart__totalPrice">0</span>zł</p>
+    </div>
     <div class="backgroundWrapper">
         <div class="about">
             <section class="about__company">
@@ -306,7 +310,8 @@
         </div>
         <footer class="footer">&copy;2020 Natalia Dziedzic</footer>
     </div>
-    <script src="./main.js"></script>
+    <script src="./js/readMore.js"></script>
+    <script src="./js/shoppingCart.js"></script>
 </body>
 
 </html>

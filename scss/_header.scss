@@ -66,5 +66,8 @@
         &__input::placeholder{
             color: rgb(211, 208, 208);
         }
-        
+        &__cartValue {
+            margin: 0 7px;
+            font-weight: bold;
+        }
 }

@@ -53,6 +53,18 @@ header {
   background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.603) 40%, rgba(139, 107, 26, 0.863), black);
 }
 
+.overlay {
+  background-color: #080808;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  top: 0px;
+  left: 0px;
+  opacity: .5;
+  filter: alpha(opacity=50);
+}
+
 .logo {
   height: 6vh;
   line-height: 6vh;
@@ -170,6 +182,11 @@ header {
   color: #d3d0d0;
 }
 
+.menu__cartValue {
+  margin: 0 7px;
+  font-weight: bold;
+}
+
 .productsBoxGrid {
   margin-top: 12vh;
   padding: 20px;
@@ -210,7 +227,6 @@ header {
 }
 
 .item {
-  height: 320px;
   padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,12 +239,6 @@ header {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-}
-
-@media (min-width: 720px) {
-  .item {
-    height: 350px;
-  }
 }
 
 .item__img {
@@ -275,6 +285,17 @@ header {
 
 .item__moreDescription--show {
   display: inline-block;
+}
+
+.item__readMore {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+@media (orientation: landscape), (min-width: 720px) {
+  .item__readMore {
+    font-size: 15px;
+  }
 }
 
 .item__readMore:hover {
@@ -355,5 +376,65 @@ header {
     line-height: 5vh;
     font-size: 12px;
   }
+}
+
+.shoppingCart {
+  display: none;
+  background-color: black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.shoppingCart__img {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  height: 80px;
+  width: 80px;
+  margin: 20px 10px 20px 20px;
+}
+
+.shoppingCart__name, .shoppingCart__price {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.shoppingCart__total {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.shoppingCart__exit {
+  grid-column: -1/-2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  margin: 10px 20px;
+}
+
+.shoppingCart--active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100vw;
+  z-index: 4;
+  max-height: 100vh;
+  overflow: auto;
 }
 /*# sourceMappingURL=main.css.map */
