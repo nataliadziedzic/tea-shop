@@ -1,4 +1,5 @@
-const cartItemsContainer = document.querySelector(".shoppingCart")
+const shoppingCart = document.querySelector(".shoppingCart")
+const cartItemsContainer = document.querySelector(".shoppingCart__itemsContainer")
 let totalPrice = document.querySelector(".shoppingCart__totalPrice")
 const cartValue = document.querySelector(".menu__cartValue")
 const buyBtn = document.querySelectorAll(".item__buy")
@@ -11,18 +12,18 @@ const overlay = document.createElement("div");
 const handleCartView = () => {
     overlay.classList.add("overlay");
     document.body.appendChild(overlay);
-    if (!cartItemsContainer.classList.contains("shoppingCart--active")) {
-        cartItemsContainer.classList.add("shoppingCart--active")
+    if (!shoppingCart.classList.contains("shoppingCart--active")) {
+        shoppingCart.classList.add("shoppingCart--active")
     }
     else {
-        cartItemsContainer.classList.remove("shoppingCart--active")
+        shoppingCart.classList.remove("shoppingCart--active")
     }
 }
 
 // Logic for closing the cart
 
 shoppingCartExit.addEventListener("click", () => {
-    cartItemsContainer.classList.remove("shoppingCart--active")
+    shoppingCart.classList.remove("shoppingCart--active")
     overlay.classList.remove("overlay");
 
 })
@@ -85,6 +86,47 @@ const updateTotalPrice = (products) => {
         totalPrice.innerHTML = myPrice.toFixed(2)
     }
 }
+const totalPriceOnLoad = () => {
+    let totalCost = localStorage.getItem("totalCost")
+    if (totalCost) {
+        totalPrice.innerHTML = totalCost
+    }
+}
+totalPriceOnLoad()
+
+// Logic for removing all items from the cart
+document.querySelector(".shoppingCart__emptyCart").addEventListener("click", () => {
+    localStorage.removeItem("products")
+    localStorage.removeItem("productsNumber")
+    localStorage.removeItem("totalCost")
+    cartItemsContainer.innerHTML = `<h3 class="itemsContainer__emptyInfo">Twój koszyk jest pusty.</h3>`
+    totalPrice.innerHTML = 0
+    cartValue.textContent = 0
+})
+
+// Logic for adding items to the cart
+const updateCartItems = (products) => {
+    let cartProducts = localStorage.getItem("products")
+    cartProducts = JSON.parse(cartProducts)
+    cartItemsContainer.innerHTML = ''
+    if (cartProducts != null) {
+        Object.values(cartProducts).map(item => {
+            cartItemsContainer.innerHTML += `
+            <div class="itemsContainer__product">
+        <img src=${JSON.stringify(item.src)} class="itemsContainer__img">
+        <h3 class="itemsContainer__name">${item.name}</h3>
+        <input class="itemsContainer__input" type="text" value=${item.amount}>
+        <span class="itemsContainer__price">${item.price}</span>
+        <button class="itemsContainer__remove" onClick={removeCartItem(${item.name})}><i class="far fa-minus-square"></i></button>
+        </div>
+        `
+        })
+    }
+    else {
+        cartItemsContainer.innerHTML += `<h3 class="itemsContainer__emptyInfo">Twój koszyk jest pusty.</h3>`
+    }
+}
+updateCartItems()
 
 // Logic for 'buy' button
 const handleBuyBtn = (element) => {
@@ -101,6 +143,7 @@ const handleBuyBtn = (element) => {
     }
     updateCartValue(products)
     updateTotalPrice(products)
+    updateCartItems(products)
 }
 
 buyBtn.forEach(element => {

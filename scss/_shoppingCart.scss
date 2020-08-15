@@ -3,27 +3,88 @@
     background-color: rgb(0, 0, 0);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    &__img{
-        grid-column: 1;
-        height: 80px;
-        width: 80px;
-        margin: 20px 10px 20px 20px;
-    }
-    &__name, &__price{
+    min-height: 300px;
+    &__total,&__exit{
         align-self: center;
     }
     &__total{
-        grid-column: 1/2;
+        grid-column: 2/3;
         grid-row: 1/2;
-        align-self: center;
-
+        margin: 20px 10px 20px 20px;
+    }
+    &__totalPrice{
+        margin: 0 5px;
     }
     &__exit{
         grid-column: -1/-2;
         grid-row: 1/2;
+        margin-left: 70%;
+        font-size: 15px;
+        transition: .5s;
+        &:hover i{
+            font-size: 18px;
+        }
+    }
+    &__emptyCart{
+        grid-column: 2;
+        padding: 2px;
+        margin: 5px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgb(218, 165, 32);
+        color: rgb(0, 0, 0);
+        width: 115px;
+        height: 30px;
+        transition: .3s;
+        @media (min-width: 720px){
+            width: 155px;
+            padding: 5px;
+            }
+        &:hover{
+            color: rgb(218, 165, 32);
+            background-color: rgb(0, 0, 0);
+            border: 1px solid rgb(255, 255, 255);
+        }
+    }
+    &__itemsContainer{
+        grid-column: 1/-1;
+    }
+}
+.itemsContainer{
+        display: grid;
+        grid-template-columns: 1fr;
+        max-height: 100%;
+        overflow: auto;
+    &__product{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr auto;
+        }
+    &__img{
+        grid-column: 1;
+        height: 60px;
+        width: 60px;
+        margin: 20px 10px 20px 20px;
+    }
+    &__name, &__price, &__input, &__emptyInfo{
         align-self: center;
-        justify-self: right;
-        margin: 10px 20px;
+    }
+    &__input{
+        grid-column: 3/4;
+        background-color: rgb(78, 77, 77);
+        height: 24px;
+        width: 30px;
+        margin: 30px;
+    }
+    &__emptyInfo{
+        grid-column: 1/-1;
+        grid-row: 2/3;
+        height: 80px;
+        font-weight: normal;
+    }
+    &__remove {
+        grid-column: -1;
+        margin: 30px;
     }
 }
 .shoppingCart--active{
