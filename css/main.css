@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: url("../img/main-background.jpg");
   background-repeat: no-repeat;
@@ -381,8 +385,6 @@ header {
 .shoppingCart {
   display: none;
   background-color: black;
-  display: -ms-grid;
-  display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   min-height: 300px;
@@ -512,6 +514,8 @@ header {
 
 .shoppingCart--active {
   position: fixed;
+  display: -ms-grid;
+  display: grid;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);

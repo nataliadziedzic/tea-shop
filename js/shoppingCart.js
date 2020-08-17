@@ -14,9 +14,7 @@ const handleCartView = () => {
     document.body.appendChild(overlay);
     if (!shoppingCart.classList.contains("shoppingCart--active")) {
         shoppingCart.classList.add("shoppingCart--active")
-    }
-    else {
-        shoppingCart.classList.remove("shoppingCart--active")
+        document.querySelector(".fa-shopping-basket").classList.add("menu__link--active")
     }
 }
 
@@ -24,8 +22,9 @@ const handleCartView = () => {
 
 shoppingCartExit.addEventListener("click", () => {
     shoppingCart.classList.remove("shoppingCart--active")
+    document.querySelector(".menu__cartBtn").classList.remove("menu__link--active")
+    document.querySelector(".fa-shopping-basket").classList.remove("menu__link--active")
     overlay.classList.remove("overlay");
-
 })
 
 // Logic for updating number of items in cart

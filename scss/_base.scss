@@ -9,6 +9,9 @@
     font-family: 'Ubuntu Condensed', sans-serif;
     text-align: center;
 }
+html{
+  scroll-behavior: smooth;
+}
  body {
     background-image: url("../img/main-background.jpg");
     background-repeat: no-repeat;

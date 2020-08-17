@@ -20,10 +20,10 @@
         <nav class="menu">
             <ul class="menu__list">
                 <li class="menu__item">
-                    <a class="menu__link" href="">Sklep</a>
+                    <a class="menu__link" href="#shop">Sklep</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="">O nas</a>
+                    <a class="menu__link" href="#about">O nas</a>
                 </li>
                 <li class="menu__item">
                     <div class=" menu__searchBox">
@@ -40,7 +40,7 @@
             </ul>
         </nav>
     </header>
-    <div class="productsBoxGrid">
+    <div class="productsBoxGrid" id="shop">
         <h2 class="productsBoxGrid__title title">Poznaj nasze produkty:</h2>
         <div class="productsBoxGrid__item item">
             <img src="img/tea-product1.jpg" alt="Zdjęcie herbaty" class="item__img">
@@ -291,7 +291,7 @@
         <button class="shoppingCart__emptyCart">Usuń koszyk</button>
     </div>
     <div class="backgroundWrapper">
-        <div class="about">
+        <div class="about" id="about">
             <section class="about__company">
                 <h2 class="title">Kim jesteśmy?</h2>
                 <p class="about__text">Jesteśmy firmą, która od ponad 25 lat zajmuje się sprzedażą najwyższej klasy
@@ -312,6 +312,7 @@
         </div>
         <footer class="footer">&copy;2020 Natalia Dziedzic</footer>
     </div>
+    <script src="./js/navigation.js"></script>
     <script src="./js/readMore.js"></script>
     <script src="./js/shoppingCart.js"></script>
 </body>
