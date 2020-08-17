@@ -21,6 +21,23 @@ input.addEventListener("blur", () => {
     searchIcon.classList.remove("menu__link--active")
 })
 
+// Logic for showing and hiding input on smaller screens
+let hidden = true
+searchIcon.addEventListener("click", () => {
+    const width = document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth
+    if (width < 720) {
+        if (hidden) {
+            input.style.display = "inline-block"
+            hidden = false
+        }
+        else {
+            input.style.display = "none"
+            hidden = true
+        }
+    }
+    else input.style.display = "inline-block"
+})
+
 // Logic for changing active menu link on scroll
 window.addEventListener("scroll", () => {
     let active = document.querySelectorAll(".menu__link--active");
