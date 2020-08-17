@@ -1,3 +1,4 @@
+$gold: rgb(218, 165, 32);
 .logo{
     height: 6vh;
     line-height: 6vh;
@@ -42,7 +43,7 @@
         }
     }
     &__link:hover, &__link--active, &__link:hover i{
-        color: rgb(218, 165, 32);
+        color: $gold;
     }
     &__input{
         @media (max-width: 719px){
@@ -54,7 +55,7 @@
             border: 1px solid rgb(0, 0, 0);
             border-radius: 50px;
             background-color: rgba(66, 58, 49, 0.88);
-            color: rgb(218, 165, 32)   ;
+            color: $gold;
             font-size: 15px;
             text-align: center;
             @media (min-width: 1024px){

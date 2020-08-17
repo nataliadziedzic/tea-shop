@@ -3,13 +3,14 @@
     background-color: rgb(0, 0, 0);
     grid-template-columns: 1fr 1fr 1fr;
     min-height: 300px;
-    &__total,&__exit{
+    &__total,&__exit, &__emptyCart{
         align-self: center;
     }
     &__total{
         grid-column: 2/3;
         grid-row: 1/2;
         margin: 20px 10px 20px 20px;
+        font-weight: bold;
     }
     &__totalPrice{
         margin: 0 5px;
@@ -23,27 +24,23 @@
         &:hover i{
             font-size: 18px;
         }
+        @media (min-width: 1024px) {
+            font-size: 18px;
+            &:hover i{
+                font-size: 22px;
+            }
+        }
     }
     &__emptyCart{
-        grid-column: 2;
-        padding: 2px;
-        margin: 5px;
+        @include btn;
+        grid-column: 1/-1;
         font-size: 14px;
-        letter-spacing: 1px;
-        border: 1px solid rgb(0, 0, 0);
-        background-color: rgb(218, 165, 32);
-        color: rgb(0, 0, 0);
-        width: 115px;
         height: 30px;
-        transition: .3s;
-        @media (min-width: 720px){
-            width: 155px;
-            padding: 5px;
-            }
-        &:hover{
-            color: rgb(218, 165, 32);
-            background-color: rgb(0, 0, 0);
-            border: 1px solid rgb(255, 255, 255);
+        justify-self: center;
+        margin: 30px 0;
+        @media (min-width: 1024px){
+            font-size: 16px;
+            height: 40px;
         }
     }
     &__itemsContainer{
@@ -56,17 +53,29 @@
         max-height: 100%;
         overflow: auto;
     &__product{
+            margin: 0 5%;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr auto;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            @media (min-width: 1024px) {
+                margin: 0 15%;
+            }
         }
     &__img{
         grid-column: 1;
         height: 60px;
         width: 60px;
         margin: 20px 10px 20px 20px;
+        @media (min-width: 720px) {
+            height: 80px;
+            width: 80px;
+        }
     }
     &__name, &__price, &__input, &__emptyInfo{
         align-self: center;
+        justify-self: center;
+    }
+    &__name{
+        font-weight: normal;
     }
     &__input{
         grid-column: 3/4;
@@ -78,12 +87,7 @@
     &__emptyInfo{
         grid-column: 1/-1;
         grid-row: 2/3;
-        height: 80px;
         font-weight: normal;
-    }
-    &__remove {
-        grid-column: -1;
-        margin: 30px;
     }
 }
 .shoppingCart--active{
@@ -93,7 +97,17 @@
     left: 50%;
     transform: translate(-50%, -50%);  
     width: 100vw;
+    max-width: 1200px;
     z-index: 4;
     max-height: 100vh;
     overflow: auto;
+}
+.shoppingCart, .itemsContainer__emptyInfo, .itemsContainer__name, .itemsContainer__price{
+    font-size: 15px;
+    @media (min-width: 720px) {
+        font-size: 18px;
+    }
+    @media (min-width: 1024px) {
+        font-size: 20px;
+    }
 }

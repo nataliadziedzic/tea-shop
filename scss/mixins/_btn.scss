@@ -1,0 +1,20 @@
+@mixin btn {
+    padding: 2px;
+        margin: 5px;
+        font-size: 16px;
+        letter-spacing: 1px;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: $gold;
+        color: rgb(0, 0, 0);
+        width: 115px;
+        transition: .3s;
+        @media (min-width: 720px){
+            width: 155px;
+            padding: 5px;
+            }
+        &:hover, &--disable{
+            color: $gold;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid rgb(255, 255, 255);
+        }
+} 

@@ -105,24 +105,32 @@ document.querySelector(".shoppingCart__emptyCart").addEventListener("click", () 
 
 // Logic for adding items to the cart
 const updateCartItems = (products) => {
+    const btn = document.querySelector(".shoppingCart__emptyCart")
     let cartProducts = localStorage.getItem("products")
     cartProducts = JSON.parse(cartProducts)
     cartItemsContainer.innerHTML = ''
     if (cartProducts != null) {
         Object.values(cartProducts).map(item => {
+            btn.classList.remove("shoppingCart__emptyCart--disable")
+            btn.style.cursor = "pointer"
+            btn.addEventListener("click", () => {
+                btn.classList.add("shoppingCart__emptyCart--disable")
+                btn.style.cursor = "auto"
+            })
             cartItemsContainer.innerHTML += `
             <div class="itemsContainer__product">
         <img src=${JSON.stringify(item.src)} class="itemsContainer__img">
         <h3 class="itemsContainer__name">${item.name}</h3>
         <input class="itemsContainer__input" type="text" value=${item.amount}>
         <span class="itemsContainer__price">${item.price}</span>
-        <button class="itemsContainer__remove" onClick={removeCartItem(${item.name})}><i class="far fa-minus-square"></i></button>
         </div>
         `
         })
     }
     else {
         cartItemsContainer.innerHTML += `<h3 class="itemsContainer__emptyInfo">Twój koszyk jest pusty.</h3>`
+        btn.classList.add("shoppingCart__emptyCart--disable")
+        btn.style.cursor = "auto"
     }
 }
 updateCartItems()
