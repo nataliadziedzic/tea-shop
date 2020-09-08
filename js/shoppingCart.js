@@ -118,11 +118,11 @@ const updateCartItems = (products) => {
                 btn.style.cursor = "auto"
             })
             cartItemsContainer.innerHTML += `
-            <div class="itemsContainer__product">
-        <img src=${JSON.stringify(item.src)} class="itemsContainer__img">
-        <h3 class="itemsContainer__name">${item.name}</h3>
-        <input class="itemsContainer__input" type="text" value=${item.amount}>
-        <span class="itemsContainer__price">${item.price}</span>
+            <div class="product">
+        <img src=${JSON.stringify(item.src)} class="product__img">
+        <h3 class="product__name">${item.name}</h3>
+        <span class="product__amount" >${item.amount}x</span>
+        <span class="product__price">${item.price}</span>
         </div>
         `
         })
@@ -137,6 +137,9 @@ updateCartItems()
 
 // Logic for 'buy' button
 const handleBuyBtn = (element) => {
+    setTimeout(() => {
+        cartValue.style.fontSize = ""
+    }, 1000)
     const item = element.parentElement
     const img = item.querySelector(".item__img").src
     const name = item.querySelector(".item__name").textContent

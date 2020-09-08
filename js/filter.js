@@ -3,6 +3,7 @@ const message = document.createElement("h3")
 message.classList.add("productsBoxGrid__notFound")
 message.innerHTML = "Przykro nam, nie mamy nic takiego."
 document.querySelector(".productsBoxGrid").appendChild(message)
+message.style.display = "none"
 
 // Logic for finding products matching with typed text
 const findProduct = (e) => {

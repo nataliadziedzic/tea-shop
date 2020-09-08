@@ -17,11 +17,12 @@
     &__title{
         position: absolute;
         top: 0;
-        left: 0;
-        right: 0;
+        left: 10%;
+        right: 10%;
         letter-spacing: 1px;
-        background: radial-gradient(100% 50%, rgb(66, 62, 62), rgba(0, 0, 0, 0.603));
         line-height: 250%;
+        text-shadow: 1px 1px black;
+        border-bottom: 1px solid white;
     }
 }
     

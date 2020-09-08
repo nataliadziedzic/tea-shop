@@ -52,14 +52,19 @@
         grid-template-columns: 1fr;
         max-height: 100%;
         overflow: auto;
-    &__product{
-            margin: 0 5%;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            @media (min-width: 1024px) {
-                margin: 0 15%;
-            }
-        }
+    &__emptyInfo{
+        grid-column: 1/-1;
+        grid-row: 2/3;
+        font-weight: normal;
+    }
+}
+.product{
+    margin: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @media (min-width: 1024px) {
+        margin: 0 15%;
+    }
     &__img{
         grid-column: 1;
         height: 60px;
@@ -70,24 +75,16 @@
             width: 80px;
         }
     }
-    &__name, &__price, &__input, &__emptyInfo{
+    &__name, &__price, &__amount{
         align-self: center;
         justify-self: center;
     }
     &__name{
         font-weight: normal;
     }
-    &__input{
+    &__amount{
         grid-column: 3/4;
-        background-color: rgb(78, 77, 77);
-        height: 24px;
-        width: 30px;
         margin: 30px;
-    }
-    &__emptyInfo{
-        grid-column: 1/-1;
-        grid-row: 2/3;
-        font-weight: normal;
     }
 }
 .shoppingCart--active{
